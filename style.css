@@ -1,75 +1,158 @@
-*{
+* {
     margin: 0;
     padding: 0;
     text-align: center;
+    box-sizing: border-box;
 }
 
-h1{
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1 {
     background-color: #081b31;
     color: white;
     height: 5rem;
     line-height: 5rem;
+    margin-bottom: 1rem;
 }
 
-.choice{
+.choice {
     height: 165px;
     width: 165px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items:  center;
-
+    align-items: center;
 }
 
-.choice:hover{
-/* opacity: 0.5; */
-cursor: pointer;
-background-color: black;
-
+.choice:hover {
+    cursor: pointer;
+    background-color: black;
 }
 
-img{
+img {
     height: 150px;
     width: 150px;
     object-fit: cover;
     border-radius: 50%;
-
 }
 
-.choices{
+.choices {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
-.score-board{
-    display:flex;
-    justify-content:center;
-    font-size:2rem;
-    align-items:center;
-    margin-top: 3rem;
-    gap: 5rem;
-
+.score-board {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 3rem;
+    flex-wrap: wrap;
 }
 
-#user-score #comp-score{
+.score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#user-score, #comp-score {
     font-size: 4rem;
-
 }
 
-
-.msg-container{
-    margin-top: 5rem;
+.msg-container {
+    margin-top: 2rem;
+    padding: 0 1rem; /* Add padding to prevent text overflow */
 }
-#msg{
+
+#msg {
     background-color: black;
     color: white;
     font-size: 2rem;
-    margin-top:5rem ;
-    display: inline;
+    margin-top: 2rem;
+    display: inline-block;
     padding: 1rem;
     border-radius: 1rem;
-    
+    max-width: 100%; /* Ensure message fits within the screen */
+    word-wrap: break-word; /* Break long words */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+        height: 3rem;
+        line-height: 3rem;
+    }
+
+    .choice {
+        height: 120px;
+        width: 120px;
+    }
+
+    img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .choices {
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .score-board {
+        font-size: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    #user-score, #comp-score {
+        font-size: 2.5rem;
+    }
+
+    #msg {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+        height: 2.5rem;
+        line-height: 2.5rem;
+    }
+
+    .choice {
+        height: 90px;
+        width: 90px;
+    }
+
+    img {
+        height: 75px;
+        width: 75px;
+    }
+
+    .choices {
+        gap: 1rem;
+    }
+
+    .score-board {
+        font-size: 1.2rem;
+        gap: 1rem;
+    }
+
+    #user-score, #comp-score {
+        font-size: 2rem;
+    }
+
+    #msg {
+        font-size: 1.2rem;
+        padding: 0.3rem;
+    }
 }
